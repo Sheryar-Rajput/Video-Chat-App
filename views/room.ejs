@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cirrus-ui/dist/cirrus.min.css">
+ 
+ <script>
+    const ROOM_ID = "<%= roomId %>"
+  </script>
+  <script defer src="https://unpkg.com/peerjs@1.2.0/dist/peerjs.min.js"></script>
+  <script src="/socket.io/socket.io.js" defer></script>
+  <script src="script.js" defer></script>
+  <title>Document</title>
+  <style>
+    body{
+      background-color: rgb(43, 41, 41);
+    }
+    #video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 300px);
+      grid-auto-rows: 300px;
+      justify-content: space-around;
+      padding: 30px;
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background-color: gray;
+
+    }
+
+    .BtnEnd {
+      display: flex;
+      justify-content: center;
+      
+    }
+
+    #endCallButton {
+      background-color: rgb(245, 83, 83);
+      color: white;
+      padding: 5px;
+      border: red ;
+      border-radius: 13px;
+      font-size: medium;
+      /* display: table-cell; vertical-align: bottom; */
+    }
+   
+#MuteButton{
+  background-color: rgb(245, 83, 83);
+      color: white;
+      padding: 5px;
+      border: red ;
+      border-radius: 13px;
+      font-size: medium;
+      margin-left: 10px;
+}
+#offVideo{
+  background-color: rgb(245, 83, 83);
+      color: white;
+      padding: 5px;
+      border: red ;
+      border-radius: 13px;
+      font-size: medium;
+      margin-left: 10px;
+}
+#msgBox{
+  margin-top: 50px;
+  display: none;
+  color: white;
+  text-align: center;
+}
+  </style>
+</head>
+
+<body>
+  <h6  class="font-alt subtitle font-normal" style="color:white ; margin-top: 20px;padding: 20px;" >  Invite ID :   <%= roomId %></h6>
+  <div id="video-grid">
+  </div>
+
+  <div id="msgBox" >
+  </div>
+
+  <div class="BtnEnd">
+    <button id="endCallButton"  onclick="endCall()">
+      Call End 
+    </button>
+    <button id="MuteButton" onclick="muteMic()">
+      Mute Mic
+    </button>
+    <button id="offVideo"   onclick="offCam()" >
+     Video 
+    </button>
+  </div>
+  </div>
+
+
+
+</body>
+<!-- <button>
+  <img src="./asset/camera.png">
+</button>
+    <button>
+      <img src="./asset/mic.png">
+    </button>
+    <button>
+      <img src="./asset/end call.png">
+    </button> -->
+
+</html>

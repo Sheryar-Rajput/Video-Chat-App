@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cirrus-ui/dist/cirrus.min.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <script defer src="https://unpkg.com/peerjs@1.2.0/dist/peerjs.min.js"></script>
+<style>
+#mainDiv{
+  padding: 20px; 
+  margin-top: 20px; 
+}
+.joinDiv{
+  text-align: center;
+  margin-top: 50px;
+    
+}
+
+
+</style>
+</head>
+<body>
+
+    <div id="mainDiv">
+        <div style="text-align: center ;" >
+            <h1 class="animate__animated animate__rubberBand  font-alt subtitle font-normal  ">Join Or Create Meeting</h1>
+        </div>
+
+        <div class="joinDiv">
+            <input id="meetingId"  class="input-control input--lg" style="width: 300px;" placeholder="Enter Room Id To Join" />
+            <button class="btn-primary" onclick="JoinMe()">
+   Join
+            </button>
+        </div>
+        <div class="createDiv joinDiv ">
+            <button onclick="CreateMeeting()" class="btn-primary" >
+                Create Meeting
+            </button>
+            
+        </div>
+    </div>
+
+
+
+    <script>
+        function JoinMe() {
+            var id = meetingId.value
+            console.log(id)
+            if(!id){
+                
+                // window.location.href = '/meeting/join'
+            }
+            else{
+                window.location = `/meeting/askjoin/${id}`
+            }
+        }
+       function CreateMeeting(){
+        window.location.href = '/'
+
+       }
+    //    function errAlert(){
+    //     var alertTime =  setInterval(()=>{
+    //         console.log("yes")
+    //       document.getElementById('invalid').style = 'block'  
+    //     }
+    //     , 5000);
+    //     clearInterval(alertTime,()=>{
+    //         console.log('ni')
+    //         document.getElementById('invalid').style = 'none' 
+    //     })
+    //    }
+
+    </script>
+</body>
+
+</html>
