@@ -7,7 +7,7 @@ const Room = new Schema(
          type  : String,
          required : true 
         },
-        person: {
+        persons: {
             type: [String],
           
         },
